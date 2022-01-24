@@ -40,6 +40,7 @@ var SCR_HEIGHT = 640
 var
     gRatio = 1.0
     win: Window
+    enableUpdate:bool = true
 
 ################
 # keyCB() callback
@@ -53,6 +54,8 @@ proc keyCb(win: Window, key: Key, scanCode: int32, action: KeyAction,
                     win.shouldClose = true
                 of keyR:
                     win.size = (w: SCR_WIDTH, h: SCR_HEIGHT)
+                of keyS:
+                    enableUpdate = not enableUpdate
                 else: discard
         else: discard
 
@@ -151,23 +154,26 @@ proc main() =
     resize(win, glfw.framebufferSize(win))
 
     glfw.swapInterval(1)
+    var zoom:float
     while not win.shouldClose:
         var curTime = glfw.getTime()
 
         glClear(GL_COLOR_BUFFER_BIT)
 
-        let zoom = 1 + time.GLfloat / 200
+        if enableUpdate:
+            zoom = 1 + time.GLfloat / 200
+            inc time
         gluniform2f(uni_scaleFactor, gRatio / zoom, 1.0 / zoom)
         gluniform2f(uni_centerOffset, 0.5 * 1.1 * zoom, -0.25 * zoom)
         gldrawArrays(GL_TRIANGLE_FAN, 0.GLint, sizeof(vertices).GLsizei)
-        glfw.swapBuffers(win)
-        glfw.pollEvents()
 
         if curTime - lastTime >= 1.0:
             win.title = fmt"FPS={frame:2d}   Fractal Test"
             lastTime = curTime
             frame = 0
-        inc time
         inc frame
+
+        glfw.swapBuffers(win)
+        glfw.pollEvents()
 main()
 
