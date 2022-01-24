@@ -9,13 +9,16 @@ and converted to Nim language.
 
 <img src="https://github.com/dinau/nim-opengl-test/blob/main/res/movie.gif?raw=true">
 
+Note: I only confirmed on Windows10 enviromnet at this moment. 
+
 #### Build and run
 
 ```
 nimble run
 ```
 
-#### Speed optimize
+
+#### Speed optimization
 
 ```
 nimble speed
@@ -26,7 +29,7 @@ nimble speed
   > nim_opengl_test.exe
   ```
 
-#### Code size optimize
+#### Code size optimization
 
 ```
 nimble size
