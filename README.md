@@ -1,7 +1,7 @@
 ### nim-opengl-test
 OpenGL test program with Nim language
 
-![photo](https://github.com/dinau/nim-opengl-test/res/photo.png)
+![movie](https://github.com/dinau/nim-opengl-test/blob/master/res/movie.gif)
 
 #### Build and run
 
