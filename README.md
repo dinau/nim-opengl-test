@@ -1,6 +1,12 @@
 ### nim-opengl-test
 OpenGL test program with Nim language
 
+This program is referred from this page,  
+  * https://github.com/rylmovuk/zig-opengl-test  
+    Thank you nice demo.
+
+and converted to Nim language.
+
 <img src="https://github.com/dinau/nim-opengl-test/blob/main/res/movie.gif?raw=true">
 
 #### Build and run
@@ -34,7 +40,7 @@ nimble size
 #### Winodws10 64bit dll
 
 If you are on Windows10 64bit OS,
-use glfw3.dll-64bit/glfw3.dll instead of default one.
+use `glfw3.dll-64bit/glfw3.dll` instead of default one.
 
 #### Operation
 
