@@ -1,0 +1,4 @@
+.nimcache
+.nimcache_*
+.hg
+.git
