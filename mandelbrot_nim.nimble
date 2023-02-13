@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.1"
+version       = "0.1.2"
 author        = "dinau"
 description   = "Nim openGL teset program with Mandelbrot"
 license       = "MIT"
@@ -29,13 +29,6 @@ task size, "Compiles with size option":
     echo "--- SIZE ----"
     exec cmd
 
-#task staticlink, "Compiles with static link option":
-#    opt.add "-d:glfwStaticLib "
-#    let cmd = "nim c $# $#" % [opt.join(" "),src]
-#    echo cmd
-#    echo "--- STATICK LINK ----"
-#    exec cmd
-#    exec cmd
 
 task clean,"clean":
     rmFile target.toEXE()

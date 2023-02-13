@@ -24,10 +24,10 @@ ifeq ($(DEBUG),true)
     OPT += -d:debug
 else
     OPT += -d:danger
+	  OPT += -d:strip
     #OPT += --opt:size
 endif
 
-OPT += -d:strip
 #OPT += --app:gui
 
 

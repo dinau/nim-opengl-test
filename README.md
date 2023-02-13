@@ -4,9 +4,9 @@
 - [nim-opengl-test](#nim-opengl-test)
   - [Draw Mandelbrot](#draw-mandelbrot)
   - [Build and run](#build-and-run)
-  - [Speed optimization](#speed-optimization)
-  - [Code size optimization](#code-size-optimization)
+  - [Nim Verson and make](#nim-verson-and-make)
   - [Winodws10 64bit dll](#winodws10-64bit-dll)
+  - [Static link](#static-link)
   - [Operation](#operation)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -31,50 +31,50 @@ and converted to Nim language.
 
 Note: I only confirmed on Windows10 32bit enviromnet at this moment. 
 
-#### Nim Verson
-
----
-
-If you'd like to use `nimble build/run` or etc, Nim version must be `nim-1.6.0` or later.  
-Because GFLW-3.3 warpper depends on nim-1.6.0 or later.
-- However if you'd like to use `nim-1.0.0` or later,  
-use to build,
-
-   ```sh
-   make
-   ```
 
 #### Build and run
 
 ---
 
 ```sh
+git clone http://github.com/dinau/nim-opengl-test.git
+cd nim-opengl-test
 nimble run
 ```
 
-
-#### Code size optimization
-
----
-
-```sh
-nimble size
-```
-
-#### Execute
+#### Nim Verson and make
 
 ---
 
-```sh
-> mandelbrot_nim.exe
-```
+If you'd like to use `nimble build/run` or etc,  
+Nim version must be `nim-1.6.0` or later.  
+Because GFLW-3.3 warpper depends on nim-1.6.0 or later.
 
+However if you'd like to use `nim-1.0.0` or later,  
+use to build,
+
+   ```sh
+   make
+   ```
 #### Winodws10 64bit dll
 
 ---
 
 If you are on Windows10 64bit OS,  
 replace `glfw3.dll` with `glfw3.dll-64bit/glfw3.dll`.
+
+#### Static link
+
+---
+
+If you'd like to statically link glfw3 library,  
+enable below line, 
+
+```
+switch "define","glfwStaticLib"`
+```
+
+in `config.nims`
 
 #### Operation
 

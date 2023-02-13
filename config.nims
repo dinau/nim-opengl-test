@@ -1,3 +1,10 @@
+# for statick link, if you would like to dynamic link,
+# comemt out below.
+#switch "define","glfwStaticLib"
+
+# Eliminate back end console
+switch "app","gui"
+
 var TC = "gcc"
 #var TC = "clang"
 #var TC = "vcc"
