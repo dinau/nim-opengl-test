@@ -27,19 +27,16 @@ proc commonOpt() =
     switch "passC", "-Wl,--gc-sections"
     switch "passL", "-Wl,--gc-sections"
 
-#switch "nimcache", ".nimcache_" & TC
 switch "nimcache", ".nimcache"
 
 case TC
     of "gcc":
         commonOpt()
         when LTO: # These options let linking time slow instead of reducing code size.
-            switch "passC", "-flto"
-            switch "passL", "-flto"
+            switch "define", "lto"
     of "clang":
         commonOpt()
-        #switch "passC","-flto=auto"
-        #switch "passL","-flto"
+        switch "define", "lto"
 
 switch "cc", TC
 

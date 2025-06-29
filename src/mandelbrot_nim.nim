@@ -54,7 +54,7 @@ proc keyCb(win: Window, key: Key, scanCode: int32, action: KeyAction,
                     win.shouldClose = true
                 of keyR:
                     win.size = (w: SCR_WIDTH, h: SCR_HEIGHT)
-                of keyS:
+                of keyS, keySpace:
                     enableUpdate = not enableUpdate
                 else: discard
         else: discard
@@ -176,4 +176,3 @@ proc main() =
         glfw.swapBuffers(win)
         glfw.pollEvents()
 main()
-
